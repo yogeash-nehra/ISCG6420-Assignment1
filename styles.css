@@ -1,0 +1,75 @@
+.section1{
+    margin-bottom: 10%;
+}
+.section2{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 10%;
+}
+.pihaWrapper {
+    width: auto;
+    height: 200px;
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    overflow: hidden;
+}
+.pihaImage1{
+    width: 180%;
+    height: 180%;  
+    display: block;
+    object-fit:none;
+    object-position: 50 30;
+}
+
+.pihaImage {
+    width: 100%; /* Set image width to fill its container */
+    height: 100%; /* Set image height to fill its container */
+    object-fit: none; /* Do not resize the image */
+    object-position: center; /* Position the image at the center */
+}
+
+.textOverlay {
+    position: absolute;
+    top: 10px; /* Adjust top position for vertical alignment */
+    left: 10px; /* Adjust left position for horizontal alignment */
+    color: white; /* Text color */
+    font-size: 16px; /* Font size */
+    font-family: Arial, sans-serif; /* Font family */
+    z-index: 1; /* Ensure text is above the image */
+}
+
+.piha1line1{
+    line-height: 1.5; /* Adjust line height */
+    letter-spacing: 10px;
+    font-size:x-large;
+    background-color: forestgreen;
+    opacity: 50%;
+}
+
+.piha1line2 {
+    line-height: 1.5; /* Adjust line height */
+    letter-spacing: 12px;
+    font-size: xx-large;
+    background-color: forestgreen;
+    opacity: 50%;
+}
+.m10Wrapper {
+    width: 33.3%;
+    height: 500px;
+    background-color: lightblue;
+    float: right;
+
+}
+.booking{
+    width: 66.6%;
+    height: 500px;
+    background-color: cornflowerblue;
+    float: left;
+    text-align: center;
+}
+.button{
+    margin-top: 25%;
+    display: inline-block;
+}
