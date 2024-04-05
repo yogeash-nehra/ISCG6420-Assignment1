@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Piha Lodge Booking</title>
+		<link rel="stylesheet" href="styles.css">
+	</head>
+	<body>
+		<!-- Piha Beach Advertisment Section with seperate DIV for each frame-->
+		<section id = "section1" onclick="redirectToWebsite('https://www.piha.co.nz/')">
+			<div class="pihaWrapper" id="piha1">
+				<img src="piha1.png" class="pihaImage1" />
+				<div class="textOverlay1">
+					<div class="piha1line1">VISIT</div>
+					<div class="piha1line2">PIHA</div>
+				</div>
+			</div>
+			<div class="pihaWrapper" id="piha2" style="display: none;">
+				<img src="piha2.jpg" class="pihaImage2" />
+				<div class="textOverlay2">
+					<div class="piha2line1">EXPLORE</div>
+					<div class="piha2line2">PIHA</div>
+				</div>
+			</div>
+			<div class="pihaWrapper" id="piha3" style="display: none;">
+				<img src="piha3.jpg" class="pihaImage3" />
+				<div class="textOverlay3">
+					<div class="piha3line1">VISIT OUR</div>
+					<div class="piha3line2">WEBSITE</div>
+				</div>
+			</div>
+			<div class="myDetails" id="myDetails" style="display: none;">
+				<div class="textOverlay4">Name:     Yogeash Nehra<br>Student ID:    1558324 </div>
+			</div>
+		</section>
+		<section id="section2">
+			<div class="booking">
+				<!-- Page 1: Landing Page -->
+				<div id="landingPage">
+					<h2>Welcome to Our Booking Platform!</h2>
+					<p>We're excited to help you plan your stay. Click below to start your booking.</p>
+					<button onclick="showPage(2)">Start Booking</button>
+				</div>
+				<!-- Page 2: Reservation Dates -->
+				<div id="reservationDates" style="display: none;">
+					<h2>Reservation Dates</h2>
+					<div id="datesForm">
+						Check-in Date: <input type="date" id="checkInDate"><br>
+						Checkout Date: <input type="date" id="checkOutDate"><br>
+						<button onclick="showPage(1)">Previous</button>
+						<button onclick="showPage(3)">Next</button>
+						<br><br><label for="progressBar">Booking Progress: </label> <progress id="bookingProgress" value="25" max="100"> 25%</progress>
+					</div>
+				</div>
+				<!-- Page 3: Personal Details -->
+				<div id="personalDetails" style="display: none;">
+					<h2>Personal Details</h2>
+					<div id="personalForm">
+						Full Name: <input type="text" id="fullName"><br>
+						Email: <input type="email" id="email"><br>
+						Phone No.: <input type="tel" id="phone"><br>
+						No. of Adults: <input type="range" id="adults" min="1" max="10" value="1"> <span id="adultsValue">1</span> <br>
+						No. of Children: <input type="range" id="children" min="0" max="10" value="0"> <span id="childrenValue">0</span> <br>
+						<button type ="button" onclick="showPage(2)">Previous</button>
+						<button type ="button" onclick="showPage(4)">Next</button>
+						<br><br><label for="progressBar">Booking Progress: </label> <progress id="bookingProgress" value="50" max="100"> 50% </progress>
+					</div>
+				</div>
+				<!-- Page 4: Additional Details -->
+				<div id="additionalDetails" style="display: none;">
+					<h2>Additional Details</h2>
+					<div id="additionalForm">
+						Do you need cooking facility? <input type="radio" name="q1" value="Yes"> Yes <input type="radio" name="q1" value="No"> No<br><br>
+						Do you need outdoor activity equipments (Eg- Swiming googles, surf board)? <input type="radio" name="q2" value="Yes"> Yes <input type="radio" name="q2" value="No"> No<br><br>
+						Please add any other information that you would like us to consider for this booking: <br><br><textarea id="comments"></textarea><br>
+						<button onclick="showPage(3)">Previous</button>
+						<button onclick="showPage(5)">Next</button>
+						<br><br><label for="progressBar">Booking Progress: </label> <progress id="bookingProgress" value="75" max="100"> 75%</progress>
+					</div>
+				</div>
+				<!-- Page 5: Booking Review -->
+				<div id="bookingReview" style="display: none;">
+					<h2>Booking Review</h2>
+					<div id="reviewDetails"></div>
+					<div id="reviewForm">
+						<input type="checkbox" id="agree"> I agree to terms and conditions<br>
+						<button onclick="showPage(4)">Previous</button>
+						<button onclick="submitForm()" id="submitButton">Submit</button>
+						<br><br><label for="progressBar">Booking Progress: </label> <progress id="bookingProgress" value="100" max="100"> 25%</progress>
+					</div>
+				</div>
+				<!-- Page 6: Success Message -->
+				<div id="successMessage" style="display: none;">
+					<h2>Booking Successful!</h2>
+					<p>Thank you for choosing us. Your booking has been confirmed.</p>
+					<button onclick="showPage(1)">Return to Landing Page</button>
+				</div>
+			</div>
+			<section onclick="redirectToWebsite('https://www.mitre10.co.nz/shop/kitchen-bathroom/kitchens')">
+				<!-- Mitre 10 (m10) Advertisment Section with seperate DIV for each frame-->
+				<div class="m10WrapperMaster">
+					<div class="m10Wrapper" id="ad1" style="display: none;">
+						<img src="ad1.jpg" class="adImage1" />
+						<div class="textOverlayAd1">
+							<div class="ad1line1">Create your</div>
+							<div class="ad1line2">dream kitchen</div>
+						</div>
+					</div>
+					<div class="m10Wrapper" id="ad2" style="display: none;">
+						<img src="ad2.jpg" class="adImage2" />
+						<div class="textOverlayAd2">
+							<div class="ad2line1">On trend</div>
+						</div>
+					</div>
+					<div class="m10Wrapper" id="ad3" style="display: none;">
+						<img src="ad3.jpg" class="adImage3" />
+						<div class="textOverlayAd3">
+							<div class="ad3line1">And on</div>
+							<div class="ad3line2">budget</div>
+						</div>
+					</div>
+					<div class="m10Wrapper" id="ad4" style="background: #e96c05; display: none;">
+						<!-- <img src="ad3.jpg" class="adImage3" /> -->
+						<div class="textOverlayAd3">
+							<div class="ad4line1">Explore our</div>
+							<div class="ad4line2">kitchen</div>
+							<div class="ad4line3">range</div>
+						</div>
+					</div>
+					<div class="myDetails2" id="myDetails2" style="display: none;">
+						<div class="textOverlayAd4">Name:     Yogeash Nehra<br>Student ID:    1558324 </div>
+					</div>
+				</div>
+			</section>
+			<br>
+			<button onclick="m10replay()">Replay M10 Advertisment</button>
+		</section>
+		<a href="Yogeash - Checkpoint 1  - Assignment 1 - ISCG 6420 .pdf">View Storyboard</a>
+		<script src="functions.js"></script>
+	</body>
+</html>
